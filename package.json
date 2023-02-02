@@ -1,0 +1,21 @@
+{
+  "name": "@portfoliods/core",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hudsonpotenciano/portfoliods.git",
+  "author": "Hudson Potenciano <hudson.potenciano@valtech.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^6.4.1"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "myportfolio"
+    ],
+    "nohoist": [
+      "**/normalize-scss"
+    ]
+  }
+}

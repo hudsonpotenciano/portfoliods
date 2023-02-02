@@ -1,0 +1,10 @@
+@import "foundation/all";
+@import "base/reset";
+@import "base/root";
+
+body {
+  background-color: $body-bg-color;
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  font-weight: $body-font-weight;
+}

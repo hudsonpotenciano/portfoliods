@@ -1,0 +1,12 @@
+@import "../foundation/all";
+
+.portfoliods-text {
+  color: $red;
+  margin-left: 20px;
+}
+
+@each $size, $value in $fs {
+  .portfoliods-text-#{$size} {
+    font-size: $value;
+  }
+}
