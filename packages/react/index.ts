@@ -1,2 +1,2 @@
-import { Text } from "./atoms/Text/Text";
-export { Text };
+import { Link } from "./src/atoms/Link/Link";
+export { Link };
