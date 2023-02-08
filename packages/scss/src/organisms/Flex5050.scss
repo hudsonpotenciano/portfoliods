@@ -1,0 +1,21 @@
+@import "../foundation/all";
+
+.portfoliods-flex5050 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  @include phone() {
+    * {
+      margin: 0 auto;
+    }
+  }
+  @include tablet() {
+    * {
+      margin: 0;
+      flex-basis: 50%;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "../foundation/all";
+
+.portfoliods-xpcard {
+  height: 94px;
+  width: 94px;
+  border-radius: 15px;
+  background-color: $gray;
+  box-shadow: map-get($shadows, "1");
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: transform 250ms ease-in-out;
+
+  &:hover {
+    background-color: $white-soft;
+    transform: scale(1);
+  }
+  img {
+    width: 100%;
+    padding: 5px;
+  }
+}

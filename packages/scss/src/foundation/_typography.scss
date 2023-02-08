@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 /*=============================================
 =        Foundation - Typography              =
@@ -13,14 +13,3 @@
 =            Body font family                  =
 =============================================*/
 $body-font-family: var(--portfoliods-body-font-family, $poppins) !default;
-
-/*=============================================
-=            Body font sizes                  =
-=============================================*/
-
-$body-font-size: var(--portfoliods-body-font-size, $fs-1) !default;
-$body-font-weight: var(--portfoliods-body-font-weight, $fw-normal) !default;
-
-/*=============================================
-=            Heading font sizes               =
-=============================================*/

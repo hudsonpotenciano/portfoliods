@@ -9,14 +9,14 @@
  *
  */
 
-@mixin tablet {
-  @media (min-width: map-get($breakpoints, "md")) {
+@mixin phone {
+  @media (min-width: map-get($breakpoints, "sm")) {
     @content;
   }
 }
 
-@mixin laptop {
-  @media (min-width: map-get($breakpoints, "lg")) {
+@mixin tablet {
+  @media (min-width: map-get($breakpoints, "md")) {
     @content;
   }
 }
@@ -24,6 +24,30 @@
 @mixin desktop {
   @media (min-width: map-get($breakpoints, "xl")) {
     @content;
+  }
+}
+
+@mixin font-size {
+  @include phone() {
+    @each $size, $value in $fs-phone {
+      &-#{$size} {
+        font-size: $value;
+      }
+    }
+  }
+  @include tablet() {
+    @each $size, $value in $fs-tablet {
+      &-#{$size} {
+        font-size: $value;
+      }
+    }
+  }
+  @include desktop() {
+    @each $size, $value in $fs-desktop {
+      &-#{$size} {
+        font-size: $value;
+      }
+    }
   }
 }
 

@@ -1,0 +1,25 @@
+@import "../foundation/all";
+
+.portfoliods-avatar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .portfoliods-avatar-image {
+    border-radius: 50%;
+    object-position: center;
+    object-fit: contain;
+    filter: map-get($shadows, "1");
+    @include phone() {
+      height: 90px;
+      width: 90px;
+    }
+    @include tablet() {
+      height: 115px;
+      width: 115px;
+    }
+    @include desktop() {
+      height: 115px;
+      width: 115px;
+    }
+  }
+}

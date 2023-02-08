@@ -1,0 +1,12 @@
+@import "../foundation/all";
+
+.portfoliods-subtitle {
+  font-weight: $fw-light;
+  color: $white;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+
+  @include font-size();
+}

@@ -1,2 +1,3 @@
 import { Link } from "./src/atoms/Link/Link";
-export { Link };
+import { ScrollButton } from "./src/molecules/ScrollButton/ScrollButton";
+export { Link, ScrollButton };

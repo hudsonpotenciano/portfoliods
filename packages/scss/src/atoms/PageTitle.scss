@@ -1,0 +1,10 @@
+@import "../foundation/all";
+
+.portfoliods-pagetitle {
+  font-weight: $fw-bold;
+  color: $white;
+  border-bottom: solid 3px $brand-blue;
+  display: inline-block;
+
+  @include font-size();
+}

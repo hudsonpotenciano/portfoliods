@@ -9,5 +9,5 @@ export default {
     title: 'Atoms|Link',
 };
 
-export const LinkHover = () => <Link fontSize={3} active={false} href='' text='About me' key={1} />;
-export const LinkActive = () => <Link fontSize={3} active={true} href='' text='About me' key={1} />;
+export const LinkHover = () => <Link fontSize={3} active={false} href='' text='About me' />;
+export const LinkActive = () => <Link fontSize={3} active={true} href='' text='About me' />;

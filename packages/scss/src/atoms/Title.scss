@@ -1,0 +1,12 @@
+@import "../foundation/all";
+
+.portfoliods-title {
+  font-weight: $fw-bold;
+  color: $white;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+
+  @include font-size();
+}
