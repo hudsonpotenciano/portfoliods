@@ -1,4 +1,4 @@
 export interface LinkModel {
-    Href: string;
-    Name: string;
+    href: string;
+    name: string;
 }

@@ -1,6 +1,6 @@
 export interface XpContentModel {
-    Name: string;
-    LogoUrl: string;
-    Text: any;
-    Level: number;
+    name: string;
+    logoUrl: string;
+    lext: any;
+    level: number;
 }

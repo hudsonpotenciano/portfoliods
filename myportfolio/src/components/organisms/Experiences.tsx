@@ -1,27 +1,23 @@
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import React, { Component, ReactNode } from "react";
-import { Flex5050, FlexRow, Line, Margin, PageLinks, PageSection, PageTitle, XpCardsContainer, XpContentContainer } from "@portfoliods/react"
-import { XpContentModel } from "@portfoliods/foundation/src/types";
+import { Flex5050, FlexRow, PageLinks, PageSection, PageTitle, XpCardsContainer, XpContentContainer } from "@portfoliods/react"
+import { ExperienceModel, LinkModel } from "@portfoliods/foundation/src/types";
 
+import '@portfoliods/scss/src/atoms/PageTitle.scss';
 import '@portfoliods/scss/src/molecules/XpCardsContainer.scss';
 import '@portfoliods/scss/src/molecules/XpContentContainer.scss';
 import '@portfoliods/scss/src/atoms/Line.scss';
 
-interface xpProps {
-    xpContents: XpContentModel[]
-}
-
-const test = `Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-
-Title
-Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-`;
-
-export class Experiences extends Component<xpProps, { selectedCard: XpContentModel }> {
+export class Experiences extends Component<{ experiences: ExperienceModel[], links: LinkModel[] }, { selectedCard: ExperienceModel }> {
 
     componentDidMount() {
-        this.setState({ selectedCard: this.props.xpContents[0] })
+        this.setState({ selectedCard: this.props.experiences[0] })
+    }
+
+    clickCardEvent(cardName: string) {
+        this.setState({
+            selectedCard: this.props.experiences.find(e => e.menuIdentifier === cardName) ?? this.props.experiences[0]
+        })
     }
 
     render(): ReactNode {
@@ -33,12 +29,14 @@ export class Experiences extends Component<xpProps, { selectedCard: XpContentMod
                         <PageTitle text='Experiences'></PageTitle>
                     </div>
                     <Flex5050>
-                        <XpCardsContainer cards={this.props.xpContents.map((card) => { return { logo: card.LogoUrl, name: card.Name } })} />
+                        <XpCardsContainer onclick={(cardName: string) => {
+                            this.clickCardEvent(cardName)
+                        }} cards={this.props.experiences.map((card) => { return { logo: card.avatar, name: card.menuIdentifier } })} />
                         {/* <Line></Line> */}
-                        <XpContentContainer level={this.state?.selectedCard.Level} text={test} />
+                        <XpContentContainer level={this.state?.selectedCard.level} text={documentToHtmlString(this.state?.selectedCard.text)} />
                     </Flex5050>
                     <div>
-                        <PageLinks lastPageHref="#aboutme" nextPageHref="#contactme" links={[{ Href: "aboutme", Name: "About me" }, { Href: "contactme", Name: "Contact me" }]}></PageLinks>
+                        <PageLinks lastPageHref="#aboutme" nextPageHref="#contactme" links={this.props.links}></PageLinks>
                     </div>
                 </FlexRow>
             </PageSection>

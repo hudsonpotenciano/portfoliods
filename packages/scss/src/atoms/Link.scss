@@ -6,6 +6,15 @@
   font-weight: $fw-semibold;
   text-decoration: none;
 
+  @mixin border {
+    @include theme-aware("border-color", "brand-blue");
+    border-bottom: solid 3px black;
+    content: "";
+    display: block;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+
   &::after {
     @include border();
   }
@@ -25,14 +34,5 @@
     &:hover::after {
       transform: none;
     }
-  }
-
-  @mixin border {
-    @include theme-aware("border-color", "brand-blue");
-    border-bottom: solid 3px black;
-    content: "";
-    display: block;
-    transform: scaleX(0);
-    transition: transform 250ms ease-in-out;
   }
 }

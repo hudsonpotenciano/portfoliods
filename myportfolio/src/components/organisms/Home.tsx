@@ -1,17 +1,12 @@
 import { Component } from "react";
 import { FlexRow, Header, PageLinks, PageSection, UserIntro } from "@portfoliods/react"
-import { LinkModel, UserModel } from "@portfoliods/foundation/src/types";
+import { IntroModel, LinkModel, UserModel } from "@portfoliods/foundation/src/types";
 
 import '@portfoliods/scss/src/molecules/PageLinks.scss';
 import '@portfoliods/scss/src/molecules/UserIntro.scss';
 import '@portfoliods/scss/src/molecules/Header.scss';
 
-interface homeProps {
-    links: LinkModel[],
-    user: UserModel
-}
-
-export class Home extends Component<homeProps> {
+export class Home extends Component<{ user: IntroModel, links: LinkModel[] }> {
 
     render() {
         return (
@@ -24,7 +19,7 @@ export class Home extends Component<homeProps> {
                             <UserIntro user={this.props.user}></UserIntro>
                         </div>
                         <div>
-                            <PageLinks nextPageHref="#aboutme" links={[{ Href: "#aboutme", Name: "About me" }, { Href: "#experiences", Name: "Experiences" }, { Href: "#contactme", Name: "Contact me" }]}></PageLinks>
+                            <PageLinks nextPageHref="#aboutme" links={this.props.links}></PageLinks>
                         </div>
                     </>} />
             </PageSection>

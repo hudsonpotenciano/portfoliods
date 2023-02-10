@@ -2,7 +2,7 @@ import React from 'react';
 import { XpContent } from './XpContent';
 
 // css
-import '@portfoliods/scss/src/molecules/XpContent.scss';
+import '@portfoliods/scss/src/atoms/XpContent.scss';
 import '@portfoliods/scss/src/global.scss';
 
 export default {

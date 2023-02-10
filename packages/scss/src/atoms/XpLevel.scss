@@ -7,7 +7,7 @@
 
   &-textlevel {
     font-weight: $fw-bold;
-    @include theme-aware("color", "dark");
+    @include theme-aware("color", "light");
     @include font-size();
   }
 

@@ -9,4 +9,4 @@ export default {
     title: 'Atoms|Avatar',
 };
 
-export const Title1 = () => <Avatar />;
+export const Title1 = () => <Avatar url='' />;

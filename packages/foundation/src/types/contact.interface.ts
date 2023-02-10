@@ -1,4 +1,5 @@
 export interface ContactModel {
-    LogoUrl: string;
-    Name: string;
+    title: string;
+    logo: string;
+    link: string;
 }

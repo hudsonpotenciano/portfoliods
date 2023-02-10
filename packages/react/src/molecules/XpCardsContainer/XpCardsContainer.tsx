@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { XpCard } from '../../atoms/XpCard/XpCard';
 
-export class XpCardsContainer extends Component<{ cards: { logo: string, name: string }[] }> {
+export class XpCardsContainer extends Component<{ onclick: Function, cards: { logo: string, name: string }[] }> {
 
     mountCards() {
         let dom: React.ReactElement[] = [];
         this.props.cards.forEach(card => {
-            dom.push(<XpCard key={card.name} XpLogo={card.logo}></XpCard>)
+            dom.push(<XpCard onclick={this.props.onclick} name={card.name} key={card.name} logo={card.logo}></XpCard>)
         });
         return dom;
     }
