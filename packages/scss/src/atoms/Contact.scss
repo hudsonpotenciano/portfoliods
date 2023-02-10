@@ -1,0 +1,25 @@
+@import "../foundation/all";
+
+.portfoliods-contact {
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: transform 250ms ease-in-out;
+  &:hover {
+    transform: scale(1);
+  }
+
+  img {
+    width: 68px;
+  }
+  &-name {
+    text-align: center;
+    @include theme-aware("color", "light");
+    font-weight: $fw-bold;
+    @include font-size();
+    &:hover {
+    }
+  }
+}

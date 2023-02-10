@@ -1,0 +1,9 @@
+@import "../atoms/ThemeControl.scss";
+.portfoliods-header {
+  display: flex;
+  svg {
+    cursor: pointer;
+    width: 40px;
+    margin: map-get($spacing, "xxs") map-get($spacing, "xxxs");
+  }
+}

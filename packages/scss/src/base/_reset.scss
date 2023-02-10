@@ -14,3 +14,7 @@
 // Foi necessário adicionar nohoist no package.json do workspace
 // para que o normalize-scss fosse instalado neste pacote especificamente e não no workspace
 // para permitir adicionar esta referencia node_modules acima
+button {
+  padding: 0;
+  border: none;
+}

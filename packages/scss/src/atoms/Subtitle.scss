@@ -2,7 +2,7 @@
 
 .portfoliods-subtitle {
   font-weight: $fw-light;
-  color: $white;
+  @include theme-aware("color", "light");
   text-align: center;
   width: 100%;
   display: inline-block;

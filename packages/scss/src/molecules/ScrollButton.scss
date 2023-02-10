@@ -1,10 +1,8 @@
 @import "../foundation/all";
+@import "../atoms/Arrow.scss";
 
 .portfoliods-scrollbutton {
-  width: 66px;
-  height: 76px;
-  background-color: $dark;
-  border: 3px solid $white;
   cursor: pointer;
   background-color: transparent;
+  margin: 0 map-get($spacing, "xxxs");
 }

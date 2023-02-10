@@ -1,0 +1,13 @@
+@import "../foundation/all";
+@import "../atoms/XpCard.scss";
+
+.portfoliods-xpcardscontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-self: center;
+
+  @include desktop() {
+    max-width: 300px;
+  }
+}

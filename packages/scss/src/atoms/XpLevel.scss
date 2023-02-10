@@ -1,0 +1,50 @@
+@import "../foundation/all";
+
+.portfoliods-xplevel {
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+  &-textlevel {
+    font-weight: $fw-bold;
+    @include theme-aware("color", "dark");
+    @include font-size();
+  }
+
+  &-bar {
+    height: 20px;
+    width: 100%;
+    @include theme-aware("background-color", "gray-light");
+
+    @mixin percentBar() {
+      display: block;
+      content: "";
+      background-color: #ffb800;
+      height: 100%;
+    }
+
+    &--1::before {
+      @include percentBar();
+      width: 16%;
+    }
+    &--2::before {
+      @include percentBar();
+      width: 33%;
+    }
+    &--3::before {
+      @include percentBar();
+      width: 50%;
+    }
+    &--4::before {
+      @include percentBar();
+      width: 66%;
+    }
+    &--5::before {
+      @include percentBar();
+      width: 82%;
+    }
+    &--6::before {
+      @include percentBar();
+      width: 100%;
+    }
+  }
+}

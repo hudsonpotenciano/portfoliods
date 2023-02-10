@@ -8,7 +8,7 @@
     border-radius: 50%;
     object-position: center;
     object-fit: contain;
-    filter: map-get($shadows, "1");
+    box-shadow: map-get($shadows, "base");
     @include phone() {
       height: 90px;
       width: 90px;

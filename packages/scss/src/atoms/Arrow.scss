@@ -1,7 +1,18 @@
+@import "../foundation/all";
+
 .portfoliods-arrow {
-  &--top {
-    transform: rotate(180deg);
+  svg {
+    fill: transparent;
   }
-  &--down {
+  #border {
+    @include theme-aware("stroke", "light");
+  }
+  #arrow {
+    @include theme-aware("fill", "light");
+  }
+  &--top {
+    svg {
+      transform: rotate(180deg);
+    }
   }
 }

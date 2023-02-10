@@ -2,7 +2,8 @@
 
 .portfoliods-title {
   font-weight: $fw-bold;
-  color: $white;
+  @include theme-aware("color", "light");
+
   text-align: center;
   width: 100%;
   display: inline-block;

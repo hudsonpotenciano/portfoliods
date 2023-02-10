@@ -24,68 +24,42 @@
  */
 
 /*=============================================
-=                  Colors                     =
-=============================================*/
-
-/* Brand Colors */
-$brand-blue: #00d1ff;
-
-/* Neutral Colors */
-$dark: #1d1f22;
-$dark-light: #484848;
-$gray: #a1a1aa;
-$white: #fffefc;
-$white-soft: #f2f2f2;
-
-/* Utility colors */
-$red: #d12727;
-$red-light: #f8dedf;
-$blue: #0468db;
-$blue-light: #b4d2f4;
-
-/*=====  End of Colors  ======*/
-
-/*=============================================
 =                Typography                   =
 =============================================*/
-
-/**
- *
- * 1) Poppins. https://fonts.google.com/specimen/Poppins
- *
 
 /* Font families */
 
 $poppins: "Poppins", sans-serif;
+$body-font-family: $poppins;
 
 $fs-phone: (
-  1: 16px,
-  2: 18px,
-  3: 16px,
-  4: 22px,
-  5: 30px,
-  6: 40px,
-  7: 30px,
+  1: 10px,
+  2: 12px,
+  3: 14px,
+  4: 16px,
+  5: 18px,
+  6: 20px,
+  7: 25px,
 );
 
 $fs-tablet: (
-  1: 16px,
-  2: 18px,
-  3: 20px,
-  4: 22px,
-  5: 30px,
-  6: 40px,
-  7: 60px,
+  1: 12px,
+  2: 14px,
+  3: 16px,
+  4: 20px,
+  5: 25px,
+  6: 30px,
+  7: 40px,
 );
 
 $fs-desktop: (
-  1: 16px,
-  2: 18px,
-  3: 20px,
-  4: 22px,
-  5: 30px,
-  6: 40px,
-  7: 60px,
+  1: 12px,
+  2: 14px,
+  3: 16px,
+  4: 20px,
+  5: 25px,
+  6: 30px,
+  7: 40px,
 );
 
 /* Font weights */
@@ -143,11 +117,34 @@ $spacing: (
 /*=====  End of Spacing  ======*/
 
 $shadows: (
-  base: 0 4px 11px rgba(157, 157, 157, 0.21),
-  1: 0px 4px 4px rgba(0, 0, 0, 0.25),
+  base: 0 4px 11px rgba(157, 157, 157, 0.6),
 );
 
+/*=============================================
+=                  Theme Colors                     =
+=============================================*/
 $themes: (
-  light: "light",
-  dark: "dark",
+  light: (
+    background: #f2f2f2,
+    brand-blue: #00d1ff,
+    gray-light: #a1a1aa,
+    light: #000000,
+    light-soft: #292929,
+    red: #d12727,
+    red-light: #f8dedf,
+    blue: #0468db,
+    blue-light: #b4d2f4,
+  ),
+  dark: (
+    background: #000000,
+    brand-blue: #00d1ff,
+    gray-light: #a1a1aa,
+    light: #fffefc,
+    light-soft: #f2f2f2,
+    red: #d12727,
+    red-light: #f8dedf,
+    blue: #0468db,
+    blue-light: #b4d2f4,
+  ),
 );
+/*=====  End of Theme  ======*/

@@ -2,8 +2,9 @@
 
 .portfoliods-pagetitle {
   font-weight: $fw-bold;
-  color: $white;
-  border-bottom: solid 3px $brand-blue;
+  @include theme-aware("color", "light");
+  border-bottom: solid 3px black;
+  @include theme-aware("border-color", "brand-blue");
   display: inline-block;
 
   @include font-size();

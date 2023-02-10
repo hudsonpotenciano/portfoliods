@@ -1,10 +1,10 @@
 @import "../foundation/all";
 
 .portfoliods-xpcard {
-  height: 94px;
-  width: 94px;
+  height: 69px;
+  width: 69px;
   border-radius: 15px;
-  background-color: $gray;
+  @include theme-aware("background-color", "gray-light");
   box-shadow: map-get($shadows, "1");
   display: flex;
   justify-content: center;
@@ -15,11 +15,11 @@
   transition: transform 250ms ease-in-out;
 
   &:hover {
-    background-color: $white-soft;
+    @include theme-aware("background-color", "light-soft");
     transform: scale(1);
   }
   img {
-    width: 100%;
+    width: 61px;
     padding: 5px;
   }
 }

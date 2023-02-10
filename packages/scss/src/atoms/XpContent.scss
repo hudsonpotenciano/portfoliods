@@ -1,0 +1,12 @@
+@import "../foundation/all";
+
+.portfoliods-xpcontent {
+  white-space: break-spaces;
+  font-weight: $fw-normal;
+  max-height: 290px;
+  overflow: auto;
+
+  @include theme-aware("color", "light");
+  width: 100%;
+  @include font-size();
+}

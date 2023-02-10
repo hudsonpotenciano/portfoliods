@@ -1,16 +1,16 @@
 @import "../foundation/all";
 
 .portfoliods-link {
-  color: $red;
   font-weight: $fw-semibold;
   display: inline-block;
-  color: $white;
   text-decoration: none;
+  @include theme-aware("color", "light");
 
   @mixin border {
     display: block;
     content: "";
-    border-bottom: solid 3px $brand-blue;
+    border-bottom: solid 3px black;
+    @include theme-aware("border-color", "brand-blue");
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
   }
@@ -23,7 +23,7 @@
   }
 
   &--active {
-    color: $brand-blue;
+    @include theme-aware("border-color", "brand-blue");
     &::after {
       @include border();
       transform: scaleX(1);

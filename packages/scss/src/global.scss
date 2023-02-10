@@ -1,8 +1,16 @@
 @import "foundation/all";
+@import "atoms/Margin.scss";
+@import "atoms/Flex5050.scss";
+@import "atoms/FlexColumns.scss";
+@import "atoms/FlexRow.scss";
 @import "base/reset";
 @import "base/root";
 
 body {
-  background-color: $body-bg-color;
+  @include theme-aware("background-color", "background");
   font-family: $body-font-family;
+}
+
+html {
+  scroll-behavior: smooth;
 }
