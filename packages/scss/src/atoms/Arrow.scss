@@ -4,12 +4,15 @@
   svg {
     fill: transparent;
   }
+
   #border {
     @include theme-aware("stroke", "light");
   }
+
   #arrow {
     @include theme-aware("fill", "light");
   }
+
   &--top {
     svg {
       transform: rotate(180deg);

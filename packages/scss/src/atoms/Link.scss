@@ -1,35 +1,38 @@
 @import "../foundation/all";
 
 .portfoliods-link {
-  font-weight: $fw-semibold;
-  display: inline-block;
-  text-decoration: none;
   @include theme-aware("color", "light");
-
-  @mixin border {
-    display: block;
-    content: "";
-    border-bottom: solid 3px black;
-    @include theme-aware("border-color", "brand-blue");
-    transform: scaleX(0);
-    transition: transform 250ms ease-in-out;
-  }
+  display: inline-block;
+  font-weight: $fw-semibold;
+  text-decoration: none;
 
   &::after {
     @include border();
   }
-  &:hover:after {
+
+  &:hover::after {
     transform: scaleX(1);
   }
 
   &--active {
     @include theme-aware("border-color", "brand-blue");
+
     &::after {
       @include border();
       transform: scaleX(1);
     }
+
     &:hover::after {
       transform: none;
     }
+  }
+
+  @mixin border {
+    @include theme-aware("border-color", "brand-blue");
+    border-bottom: solid 3px black;
+    content: "";
+    display: block;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
   }
 }
