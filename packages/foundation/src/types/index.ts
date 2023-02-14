@@ -6,5 +6,6 @@ import { ExperienceModel } from './experience.interface'
 import { EntrieModel } from './entrie.interface'
 import { IntroModel } from './intro.interface'
 import { ContactMeModel } from './contactme.interface'
+import { AboutMeModel } from './aboutme.interface'
 
-export type { ContactMeModel, LinkModel, UserModel, XpContentModel, ContactModel, ExperienceModel, EntrieModel, IntroModel }
+export type { AboutMeModel, ContactMeModel, LinkModel, UserModel, XpContentModel, ContactModel, ExperienceModel, EntrieModel, IntroModel }

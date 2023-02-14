@@ -3,5 +3,7 @@
 @import "../atoms/XpLevel.scss";
 
 .portfoliods-xpcontentcontainer {
-  max-width: 550px;
+  overflow: auto;
+  max-height: calc(100vh / 2);
+  margin: 0 map-get($spacing, "sm");
 }

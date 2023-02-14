@@ -2,26 +2,26 @@ import { LinkModel } from "@portfoliods/foundation/src/types";
 import { FlexColumns, FlexRow, Link, Margin, ScrollButton } from "@portfoliods/react";
 import React, { Component, ReactNode } from "react";
 
-export class PageLinks extends Component<{ links: LinkModel[], nextPageHref?: string, lastPageHref?: string }> {
+export class PageLinks extends Component<{ nextPageFunc?: Function, prevPageFunc?: Function }> {
 
-    mountLinks() {
-        let dom: React.ReactElement[] = [];
-        this.props.links.forEach(link => {
-            dom.push(
-                <Margin key={link.Name} left={true} right={true} space="sm"><Link href={link.Href} text={link.Name}></Link></Margin>
-            )
-        })
-        return dom;
-    }
+    // mountLinks() {
+    //     let dom: React.ReactElement[] = [];
+    //     this.props.links.forEach(link => {
+    //         dom.push(
+    //             <Margin key={link.name} left={true} right={true} space="sm"><Link href={link.href} text={link.name}></Link></Margin>
+    //         )
+    //     })
+    //     return dom;
+    // }
 
     mountTopButton() {
-        if (this.props.lastPageHref) {
-            return <ScrollButton direction="top" href={this.props.lastPageHref}></ScrollButton>
+        if (this.props.prevPageFunc) {
+            return <ScrollButton direction="top" onclick={this.props.prevPageFunc}></ScrollButton>
         }
     }
     mountDownButton() {
-        if (this.props.nextPageHref) {
-            return <ScrollButton href={this.props.nextPageHref}></ScrollButton>
+        if (this.props.nextPageFunc) {
+            return <ScrollButton onclick={this.props.nextPageFunc}></ScrollButton>
         }
     }
 

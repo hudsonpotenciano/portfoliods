@@ -3,17 +3,23 @@
 .portfoliods-flex5050 {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: row;
   align-items: center;
   width: 100%;
+  gap: 40px;
 
   @include phone() {
     > * {
-      margin: 0 auto;
+      max-height: calc(100vh / 3);
     }
   }
   @include tablet() {
+    > * {
+      max-height: calc(100vh / 2);
+    }
+  }
+  @include desktop() {
     > * {
       flex-basis: 50%;
     }

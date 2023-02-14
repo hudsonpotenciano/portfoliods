@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Contact, Flex5050, FlexColumns, FlexRow, Image5050, Margin, PageLinks, PageSection, PageTitle, Subtitle } from "@portfoliods/react"
+import { Contact, Flex5050, FlexColumns, FlexRow, Margin, PageLinks, PageSection, PageTitle, Subtitle } from "@portfoliods/react"
 import { ContactModel, LinkModel } from "@portfoliods/foundation/src/types";
 
 import '@portfoliods/scss/src/atoms/Subtitle.scss';
@@ -11,6 +11,7 @@ interface aboutMeProps {
     visitMessage: string,
     thanksMessage: string,
     contacts: ContactModel[],
+    prevPageFunc: Function,
 }
 
 export class ContactMe extends Component<aboutMeProps> {
@@ -18,9 +19,36 @@ export class ContactMe extends Component<aboutMeProps> {
     mountContacts() {
         let dom: React.ReactElement[] = [];
         this.props.contacts.forEach(contact => {
-            dom.push(<Contact logo={contact.LogoUrl} name={contact.Name} key={contact.Name}></Contact>)
+            dom.push(<Contact logo={contact.logo} name={contact.title} key={contact.title}></Contact>)
         });
         return dom;
+    }
+
+    mountPage() {
+        if (this.props.thanksMessage) {
+            return <>
+                <div>
+                    <PageTitle text="Contact me"></PageTitle>
+                </div>
+                <div>
+                    <Margin bottom={true} space="xl"><Subtitle text={this.props.thanksMessage}></Subtitle></Margin>
+                    <Subtitle text={this.props.visitMessage}></Subtitle>
+                </div>
+                <div>
+                    <FlexColumns>
+                        {this.mountContacts()}
+                    </FlexColumns>
+                </div>
+                <div>
+                    <PageLinks prevPageFunc={this.props.prevPageFunc}></PageLinks>
+                </div>
+            </>
+        }
+        else {
+            <div>
+                loading...
+            </div>
+        }
     }
 
     render() {
@@ -28,23 +56,7 @@ export class ContactMe extends Component<aboutMeProps> {
             <PageSection pageId="contactme">
                 <FlexRow
                     fullScreen={true}
-                    children={<>
-                        <div>
-                            <PageTitle text="Contact me"></PageTitle>
-                        </div>
-                        <div>
-                            <Margin bottom={true} space="xl"><Subtitle text={this.props.thanksMessage}></Subtitle></Margin>
-                            <Subtitle text={this.props.visitMessage}></Subtitle>
-                        </div>
-                        <div>
-                            <FlexColumns>
-                                {this.mountContacts()}
-                            </FlexColumns>
-                        </div>
-                        <div>
-                            <PageLinks lastPageHref="#experiences" links={[{ Href: "aboutme", Name: "About me" }, { Href: "contactme", Name: "Contact me" }]}></PageLinks>
-                        </div>
-                    </>} />
+                    children={this.mountPage()} />
             </PageSection>
         )
     }

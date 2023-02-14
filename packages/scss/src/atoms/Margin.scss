@@ -1,5 +1,9 @@
 @import "../foundation/all";
 
+.portfoliods-margin {
+  width: 100%;
+}
+
 $sides: left, right, top, bottom;
 
 @each $space, $value in $spacing {

@@ -23,4 +23,13 @@
     width: 61px;
     padding: 5px;
   }
+
+  @include desktop() {
+    height: 100px;
+    width: 100px;
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
 }

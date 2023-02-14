@@ -37,7 +37,7 @@ export class Margin extends Component<MarginProps> {
             className = `${className} portfoliods-margin-bottom-${this.props.space}`;
         }
 
-        return <div className={className}>
+        return <div className={"portfoliods-margin " + className}>
             {this.props.children}
         </div>;
     }

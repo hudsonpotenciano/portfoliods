@@ -4,10 +4,17 @@
 .portfoliods-xpcardscontainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   align-self: center;
 
+  @include phone() {
+    max-width: 100%;
+    margin-bottom: map-get($spacing, "xl");
+  }
+  @include tablet() {
+    max-width: calc(100vw / 2);
+  }
   @include desktop() {
-    max-width: 300px;
+    max-width: calc(100vw / 4);
   }
 }

@@ -8,7 +8,7 @@ import '@portfoliods/scss/src/molecules/XpCardsContainer.scss';
 import '@portfoliods/scss/src/molecules/XpContentContainer.scss';
 import '@portfoliods/scss/src/atoms/Line.scss';
 
-export class Experiences extends Component<{ experiences: ExperienceModel[], links: LinkModel[] }, { selectedCard: ExperienceModel }> {
+export class Experiences extends Component<{ experiences: ExperienceModel[], blockScrollFunc: Function, nextPageFunc: Function, prevPageFunc: Function }, { selectedCard: ExperienceModel }> {
 
     componentDidMount() {
         this.setState({ selectedCard: this.props.experiences[0] })
@@ -28,15 +28,16 @@ export class Experiences extends Component<{ experiences: ExperienceModel[], lin
                     <div>
                         <PageTitle text='Experiences'></PageTitle>
                     </div>
+
                     <Flex5050>
                         <XpCardsContainer onclick={(cardName: string) => {
                             this.clickCardEvent(cardName)
                         }} cards={this.props.experiences.map((card) => { return { logo: card.avatar, name: card.menuIdentifier } })} />
                         {/* <Line></Line> */}
-                        <XpContentContainer level={this.state?.selectedCard.level} text={documentToHtmlString(this.state?.selectedCard.text)} />
+                        <XpContentContainer blockScrollFunc={this.props.blockScrollFunc} level={this.state?.selectedCard.level} text={documentToHtmlString(this.state?.selectedCard.text)} />
                     </Flex5050>
                     <div>
-                        <PageLinks lastPageHref="#aboutme" nextPageHref="#contactme" links={this.props.links}></PageLinks>
+                        <PageLinks prevPageFunc={this.props.prevPageFunc} nextPageFunc={this.props.nextPageFunc}></PageLinks>
                     </div>
                 </FlexRow>
             </PageSection>

@@ -6,11 +6,14 @@ const directions = {
     down: "down",
 }
 
-export class ScrollButton extends Component<{ direction?: keyof typeof directions, href: string }> {
+export class ScrollButton extends Component<{ direction?: keyof typeof directions, onclick?: Function }> {
     render() {
         return (
             <button className='portfoliods-scrollbutton' onClick={(e) => {
-                e.preventDefault(); window.location.href = this.props.href ?? ""
+                e.preventDefault();
+                if (this.props.onclick) {
+                    this.props.onclick();
+                }
             }}>
                 <Arrow direction={this.props.direction}></Arrow>
             </button>

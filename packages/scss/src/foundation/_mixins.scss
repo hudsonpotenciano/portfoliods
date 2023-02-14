@@ -44,6 +44,14 @@
     @each $size, $value in $fs-phone {
       &-#{$size} {
         font-size: $value;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-size: $value;
+        }
       }
     }
   }
@@ -51,6 +59,14 @@
     @each $size, $value in $fs-tablet {
       &-#{$size} {
         font-size: $value;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-size: $value;
+        }
       }
     }
   }
@@ -58,6 +74,14 @@
     @each $size, $value in $fs-desktop {
       &-#{$size} {
         font-size: $value;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-size: $value;
+        }
       }
     }
   }

@@ -6,7 +6,7 @@ import '@portfoliods/scss/src/molecules/PageLinks.scss';
 import '@portfoliods/scss/src/molecules/UserIntro.scss';
 import '@portfoliods/scss/src/molecules/Header.scss';
 
-export class Home extends Component<{ user: IntroModel, links: LinkModel[] }> {
+export class Home extends Component<{ user: IntroModel, nextPageFunc: Function }> {
 
     render() {
         return (
@@ -19,7 +19,7 @@ export class Home extends Component<{ user: IntroModel, links: LinkModel[] }> {
                             <UserIntro user={this.props.user}></UserIntro>
                         </div>
                         <div>
-                            <PageLinks nextPageHref="#aboutme" links={this.props.links}></PageLinks>
+                            <PageLinks nextPageFunc={this.props.nextPageFunc}></PageLinks>
                         </div>
                     </>} />
             </PageSection>
