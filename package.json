@@ -6,6 +6,11 @@
   "author": "Hudson Potenciano <hudson.potenciano@valtech.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "build": "yarn lerna run build",
+    "build:storybook": "yarn build && yarn lerna run build-storybook",
+    "build:myportfolio": "yarn build && yarn lerna run build-myportfolio"
+  },
   "devDependencies": {
     "lerna": "^6.4.1"
   },

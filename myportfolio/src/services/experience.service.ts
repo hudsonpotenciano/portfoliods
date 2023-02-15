@@ -1,3 +1,4 @@
+import { Constants } from "@portfoliods/foundation/src";
 import { EntrieModel, ExperienceModel } from "@portfoliods/foundation/src/types";
 import client from "./base.service";
 
@@ -7,7 +8,7 @@ async function getAllContent(): Promise<ExperienceModel[]> {
     .getEntries({
       content_type: "experience",
       order: "fields.order",
-      locale: localStorage.getItem(process.env.REACT_APP_LANGKEY ?? ""),
+      locale: localStorage.getItem(Constants.LanguageKey ?? ""),
     })
     .then((entries: any) => {
       result = entries.items.map((entrie: any) => {

@@ -1,20 +1,19 @@
+import Constants from '@portfoliods/foundation/src/Constants';
 import React, { Component } from 'react'
 import { DarkThemeButton } from './DarkThemeButton'
 import { LightThemeButton } from './LightThemeButton'
 
-const themes = {
-    dark: "dark",
-    light: "light",
-}
-
-const localStorageKey = "portfolio-theme";
-
-export class ThemeControl extends Component<{}, { selectedTheme?: keyof typeof themes }> {
+export class ThemeControl extends Component<{}, { selectedTheme?: string }> {
 
     componentDidMount(): void {
-        const selectedTheme = localStorage.getItem(localStorageKey);
+        const localStorageData = localStorage.getItem(Constants.ThemeKey);
+
+        const selectedTheme =
+            localStorageData === Constants.Themes.dark ? Constants.Themes.dark
+                : localStorageData === Constants.Themes.light ? Constants.Themes.light : Constants.Themes.light;
+
         this.setState({
-            selectedTheme: selectedTheme ? themes[selectedTheme] : themes.dark
+            selectedTheme: selectedTheme
         })
     }
 
@@ -23,18 +22,18 @@ export class ThemeControl extends Component<{}, { selectedTheme?: keyof typeof t
     }
 
     mountDarkButton() {
-        if (this.state?.selectedTheme == themes.dark) {
+        if (this.state?.selectedTheme == Constants.Themes.dark) {
             return <div onClick={() => {
                 this.setState({ selectedTheme: "light" })
-                localStorage.setItem(localStorageKey, themes.light);
+                localStorage.setItem(Constants.ThemeKey, Constants.Themes.light);
             }}><LightThemeButton></LightThemeButton></div>
         }
     }
     mountLightButton() {
-        if (this.state?.selectedTheme == themes.light) {
+        if (this.state?.selectedTheme == Constants.Themes.light) {
             return <div onClick={() => {
                 this.setState({ selectedTheme: "dark" })
-                localStorage.setItem(localStorageKey, themes.dark);
+                localStorage.setItem(Constants.ThemeKey, Constants.Themes.dark);
             }}><DarkThemeButton></DarkThemeButton></div>
         }
     }

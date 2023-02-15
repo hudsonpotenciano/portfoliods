@@ -3,14 +3,14 @@ import React, { Component } from 'react'
 import { FontSizes } from '@portfoliods/foundation/src/index'
 import { Margin } from '../Margin/Margin'
 
-const levels = {
-    1: "Basic",
-    2: "Beginner",
-    3: "Intermediary",
-    4: "Advanced",
-    5: "Expert",
-    6: "Ninja",
-}
+const levels = [
+    "Basic",
+    "Beginner",
+    "Intermediary",
+    "Advanced",
+    "Expert",
+    "Ninja",
+];
 
 export class XpLevel extends Component<{ level: number }> {
     render() {

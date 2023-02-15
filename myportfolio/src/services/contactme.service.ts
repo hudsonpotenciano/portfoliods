@@ -1,3 +1,4 @@
+import { Constants } from "@portfoliods/foundation/src";
 import { ContactMeModel, ContactModel, EntrieModel } from "@portfoliods/foundation/src/types";
 import client from "./base.service";
 
@@ -6,7 +7,7 @@ async function getContactMe(): Promise<ContactMeModel> {
   await client
     .getEntries({
       content_type: "contactMe",
-      locale: localStorage.getItem(process.env.REACT_APP_LANGKEY ?? ""),
+      locale: localStorage.getItem(Constants.LanguageKey ?? ""),
     })
     .then(async (entrie: any) => {
       result = { ...entrie.items[0].fields };
