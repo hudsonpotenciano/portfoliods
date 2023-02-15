@@ -8,8 +8,8 @@
   "private": true,
   "scripts": {
     "build": "yarn lerna run build",
-    "build:storybook": "yarn build && yarn lerna run build-storybook",
-    "build:myportfolio": "yarn build && yarn lerna run build-myportfolio"
+    "build:storybook": "yarn && yarn build && yarn lerna run build-storybook",
+    "build:myportfolio": "yarn && yarn build && yarn lerna run build-myportfolio"
   },
   "devDependencies": {
     "lerna": "^6.4.1"
