@@ -1,5 +1,5 @@
 import { LinkModel } from "@portfoliods/foundation/src/types";
-import { FlexColumns, FlexRow, Link, Margin, ScrollButton } from "@portfoliods/react";
+import { FlexColumns, FlexRow, Margin, ScrollButton } from "@portfoliods/react";
 import React, { Component, ReactNode } from "react";
 
 export class PageLinks extends Component<{ nextPageFunc?: Function, prevPageFunc?: Function }> {
@@ -27,8 +27,9 @@ export class PageLinks extends Component<{ nextPageFunc?: Function, prevPageFunc
 
     render(): ReactNode {
         return (
-            <FlexRow children={<>
-                {/* <Margin
+            <div className="portfoliods-pagelinks">
+                <FlexRow children={<>
+                    {/* <Margin
                     bottom={true}
                     space="sm"
                 >
@@ -36,17 +37,18 @@ export class PageLinks extends Component<{ nextPageFunc?: Function, prevPageFunc
                         {this.mountLinks()}
                     </FlexColumns>
                 </Margin> */}
-                <Margin
-                    space="sm"
-                    bottom={true}
-                    children={
-                        <div>
-                            {this.mountTopButton()}
-                            {this.mountDownButton()}
-                        </div>
-                    }></Margin>
+                    <Margin
+                        space="sm"
+                        bottom={true}
+                        children={
+                            <div>
+                                {this.mountTopButton()}
+                                {this.mountDownButton()}
+                            </div>
+                        }></Margin>
 
-            </>}></FlexRow>
+                </>}></FlexRow>
+            </div>
         )
     }
 }

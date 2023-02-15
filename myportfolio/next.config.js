@@ -1,7 +1,13 @@
 
 const nextConfig = require("next-transpile-modules")(["@portfoliods/react"]);
 
-module.exports = nextConfig({
+const withPWA = require("next-pwa")({
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+});
+
+module.exports = withPWA(nextConfig({
   reactStrictMode: true,
   swcMinify: true,
   env: {
@@ -10,4 +16,4 @@ module.exports = nextConfig({
     REACT_APP_CONTENTFUL_ENVIRONMENT: "master",
     REACT_APP_PEXELS_WALLPAPERS: "563492ad6f91700001000001baf35203032241c2990d7c5410b9699b",
   }
-})
+}))
