@@ -6,6 +6,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-self: center;
+  gap: 5px;
+  padding: map-get($spacing, "xxs");
 
   @include phone() {
     max-width: 100%;

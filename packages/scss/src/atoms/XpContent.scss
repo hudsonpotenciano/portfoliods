@@ -7,4 +7,14 @@
   @include theme-aware("color", "light");
   width: 100%;
   @include font-size();
+  b {
+    font-weight: $fw-bold;
+  }
+  a {
+    text-decoration: none;
+    @include theme-aware("color", "blue-light");
+    &:hover {
+      @include theme-aware("color", "blue-light");
+    }
+  }
 }

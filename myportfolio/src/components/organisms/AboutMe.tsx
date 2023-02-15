@@ -24,7 +24,7 @@ export class AboutMe extends Component<aboutMeProps> {
                     <PageTitle text='About me'></PageTitle>
                 </div>
                 <Flex5050>
-                    <XpContent fontSize={6} text={documentToHtmlString(this.props.text)}></XpContent>
+                    <XpContent fontSize={5} text={documentToHtmlString(this.props.text)}></XpContent>
                     <Image5050 alt="about me image" src={this.props.imageUrl}></Image5050>
                 </Flex5050>
                 <div>

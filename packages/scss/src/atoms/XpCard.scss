@@ -13,6 +13,7 @@
   cursor: pointer;
   transform: scale(0.9);
   transition: transform 250ms ease-in-out;
+  box-shadow: map-get($shadows, "base");
 
   &:hover {
     @include theme-aware("background-color", "light-soft");

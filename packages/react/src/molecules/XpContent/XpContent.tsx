@@ -19,7 +19,7 @@ export class XpContent extends Component<{ align?: keyof typeof Aligns, text: an
                     }
                 }}
                 style={{ textAlign: this.props.align ? this.props.align : "center" }}
-                className={`portfoliods-xpcontent portfoliods-xpcontent-${this.props.fontSize ?? FontSizes[4]}`} dangerouslySetInnerHTML={{ __html: this.props.text }}></div>
+                className={`portfoliods-xpcontent portfoliods-xpcontent-${this.props.fontSize ?? FontSizes[3]}`} dangerouslySetInnerHTML={{ __html: this.props.text }}></div>
         )
     }
 }

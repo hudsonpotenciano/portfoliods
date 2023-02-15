@@ -3,6 +3,9 @@
     margin: 0 map-get($spacing, "sm");
   }
   @include tablet() {
+    margin: 0 map-get($spacing, "sm");
+  }
+  @include desktop() {
     margin: 0;
   }
 }

@@ -19,7 +19,7 @@ export class ContactMe extends Component<aboutMeProps> {
     mountContacts() {
         let dom: React.ReactElement[] = [];
         this.props.contacts.forEach(contact => {
-            dom.push(<Contact logo={contact.logo} name={contact.title} key={contact.title}></Contact>)
+            dom.push(<Contact link={contact.link} logo={contact.logo} name={contact.title} key={contact.title}></Contact>)
         });
         return dom;
     }
@@ -31,8 +31,8 @@ export class ContactMe extends Component<aboutMeProps> {
                     <PageTitle text="Contact me"></PageTitle>
                 </div>
                 <div>
-                    <Margin bottom={true} space="xl"><Subtitle text={this.props.thanksMessage}></Subtitle></Margin>
-                    <Subtitle text={this.props.visitMessage}></Subtitle>
+                    <Margin bottom={true} space="xl"><Subtitle fontSize={6} text={this.props.thanksMessage}></Subtitle></Margin>
+                    <Subtitle fontSize={6} text={this.props.visitMessage}></Subtitle>
                 </div>
                 <div>
                     <FlexColumns>

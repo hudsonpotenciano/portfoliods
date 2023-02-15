@@ -7,7 +7,7 @@ export class UserIntro extends Component<{ user: IntroModel }> {
     render(): ReactNode {
         return (<>
             <Margin space="sm" bottom={true}><Avatar url={this.props.user.avatar}></Avatar></Margin>
-            <Title text={this.props.user.name}></Title>
+            <Title fontSize={7} text={this.props.user.name}></Title>
             <Subtitle fontSize={6} text={this.props.user.title}></Subtitle></>)
     }
 }

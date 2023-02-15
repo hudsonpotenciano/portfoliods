@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Margin } from '../Margin/Margin'
 
-export class Contact extends Component<{ name: string, logo: string }> {
+export class Contact extends Component<{ link: string, name: string, logo: string }> {
     render() {
         return (
-            <div key={this.props.name} className='portfoliods-contact'>
+            <div onClick={() => {
+                window.open(this.props.link, "_blank");
+            }} key={this.props.name} className='portfoliods-contact'>
                 <Margin
                     space='xs'
                     bottom={true}>
