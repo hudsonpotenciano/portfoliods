@@ -1,8 +1,8 @@
 const LanguageKey = "languages";
 const ThemeKey = "portfolio-theme";
 const Languages = {
-    pt: "pt-br",
-    en: "en-us",
+    pt: "pt-BR",
+    en: "en-US",
 };
 const Themes = {
     dark: "dark",
