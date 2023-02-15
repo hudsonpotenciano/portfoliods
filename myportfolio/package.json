@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build-myportfolio": "next build",
+    "build-myportfolio": "next export",
     "start": "next start",
     "lint": "next lint"
   },
