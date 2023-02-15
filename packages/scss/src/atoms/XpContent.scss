@@ -7,11 +7,4 @@
   @include theme-aware("color", "light");
   width: 100%;
   @include font-size();
-
-  @include phone() {
-    margin: 0 map-get($spacing, "xs");
-  }
-  @include tablet() {
-    margin: 0;
-  }
 }

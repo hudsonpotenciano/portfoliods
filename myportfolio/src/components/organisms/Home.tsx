@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { FlexRow, Header, PageLinks, PageSection, UserIntro } from "@portfoliods/react"
-import { IntroModel, LinkModel, UserModel } from "@portfoliods/foundation/src/types";
+import { IntroModel } from "@portfoliods/foundation/src/types";
 
 import '@portfoliods/scss/src/molecules/PageLinks.scss';
 import '@portfoliods/scss/src/molecules/UserIntro.scss';

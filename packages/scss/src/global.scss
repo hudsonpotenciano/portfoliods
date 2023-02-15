@@ -3,11 +3,12 @@
 @import "atoms/Flex5050.scss";
 @import "atoms/FlexColumns.scss";
 @import "atoms/FlexRow.scss";
+@import "atoms/PageSection.scss";
 @import "base/reset";
 @import "base/root";
 
 body {
-  @include theme-aware("background-color", "background");
+  @include theme-aware("background", "background-gradient");
   font-family: $body-font-family;
 }
 

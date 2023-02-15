@@ -126,6 +126,7 @@ $shadows: (
 $themes: (
   light: (
     background: #f2f2f2,
+    background-gradient: linear-gradient(to bottom, #ffffff, #ece9e6),
     brand-blue: #00d1ff,
     gray-light: #a1a1aa,
     light: #000,
@@ -137,6 +138,7 @@ $themes: (
   ),
   dark: (
     background: #000,
+    background-gradient: linear-gradient(to bottom, #000, #363636),
     brand-blue: #00d1ff,
     gray-light: #a1a1aa,
     light: #fffefc,

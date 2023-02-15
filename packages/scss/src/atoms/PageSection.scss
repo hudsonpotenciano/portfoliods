@@ -1,2 +1,8 @@
 .portfoliods-pagesection {
+  @include phone() {
+    margin: 0 map-get($spacing, "sm");
+  }
+  @include tablet() {
+    margin: 0;
+  }
 }

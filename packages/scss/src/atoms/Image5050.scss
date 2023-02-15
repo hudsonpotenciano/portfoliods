@@ -7,7 +7,4 @@
   @include tablet() {
     max-width: 500px;
   }
-  @include desktop() {
-    max-width: 700px;
-  }
 }

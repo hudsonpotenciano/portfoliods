@@ -20,8 +20,8 @@
   }
 
   img {
-    width: 61px;
-    padding: 5px;
+    width: 60px;
+    padding: map-get($spacing, "xxxs");
   }
 
   @include desktop() {

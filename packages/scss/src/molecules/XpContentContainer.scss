@@ -11,13 +11,4 @@
   @include tablet() {
     margin: 0;
   }
-
-  .portfoliods-xpcontent {
-    @include phone() {
-      margin: 0;
-    }
-    @include tablet() {
-      margin: 0;
-    }
-  }
 }
