@@ -5,5 +5,19 @@
 .portfoliods-xpcontentcontainer {
   overflow: auto;
   max-height: calc(100vh / 2);
-  margin: 0 map-get($spacing, "sm");
+  @include phone() {
+    margin: 0 map-get($spacing, "sm");
+  }
+  @include tablet() {
+    margin: 0;
+  }
+
+  .portfoliods-xpcontent {
+    @include phone() {
+      margin: 0;
+    }
+    @include tablet() {
+      margin: 0;
+    }
+  }
 }
