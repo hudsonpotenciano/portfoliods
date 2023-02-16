@@ -1,29 +1,33 @@
 import { Constants } from "@portfoliods/foundation/src";
 import { ContactMeModel, ContactModel, EntrieModel } from "@portfoliods/foundation/src/types";
+import { ContactMeAPI } from "@portfoliods/foundation/src/types/contactme.interface";
 import client from "./base.service";
 
 async function getContactMe(): Promise<ContactMeModel> {
-  let result: ContactMeModel = {} as ContactMeModel;
-  await client
-    .getEntries({
-      content_type: "contactMe",
-      locale: localStorage.getItem(Constants.LanguageKey ?? ""),
-    })
-    .then(async (entrie: any) => {
-      result = { ...entrie.items[0].fields };
-      await client.getEntries({ content_type: "contact" })
-        .then((entries: any) => {
-          result.contacts = entries.items.map((contact: any) => {
-            return {
-              ...contact.fields,
-              logo: contact.fields.logo.fields.file.url,
-            } as ContactModel
-          });
-        })
-    })
-    .catch(console.error);
+  try {
+    const { items } = await client
+      .getEntries<ContactMeAPI>({
+        content_type: "contactMe",
+        locale: localStorage.getItem(Constants.LanguageKey ?? ""),
+        limit: 1
+      });
 
-  return result;
+    if (items) {
+      const contacts = items[0].fields.contacts.map((contact) => {
+        return { ...contact.fields, logo: contact.fields.logo.fields.file.url }
+      })
+      return {
+        ...items[0].fields,
+        contacts: contacts
+      } as ContactMeModel
+    }
+
+    return {} as ContactMeModel;
+
+  } catch (error: any) {
+    console.error(error);
+    return Promise.reject();
+  }
 }
 
 export { getContactMe };

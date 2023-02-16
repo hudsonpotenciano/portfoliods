@@ -1,10 +1,18 @@
 @import "../foundation/all";
 
 .portfoliods-image5050 {
+  display: flex;
+  justify-content: center;
   @include phone() {
     max-width: 100%;
+    img {
+      width: 60%;
+    }
   }
   @include tablet() {
     max-width: 500px;
+    img {
+      width: 60%;
+    }
   }
 }

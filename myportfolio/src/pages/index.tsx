@@ -7,10 +7,11 @@ import { getIntro } from '../services/intro.service';
 import { getAllContent } from '../services/experience.service';
 import '@portfoliods/scss/src/global.scss';
 import { AboutMeModel, ContactMeModel, ExperienceModel, IntroModel, LinkModel } from '@portfoliods/foundation/src/types';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { getAboutMe } from '@/services/aboutme.service';
 import { getContactMe } from '@/services/contactme.service';
 import { Breakpoints } from '@portfoliods/foundation/src';
+import { Header } from '@portfoliods/react';
 
 export default function Index() {
   const [blockScroll, setBlockScroll] = useState(false);
@@ -19,6 +20,7 @@ export default function Index() {
   const [experiences, setExperiences] = useState({} as ExperienceModel[]);
   const [aboutMe, setAboutMe] = useState({} as AboutMeModel);
   const [contactMe, setContactMe] = useState({} as ContactMeModel);
+  const headerRef = useRef<any>();
 
   const getIntroFromApi = () => {
     getIntro().then((result: IntroModel) => {
@@ -59,8 +61,6 @@ export default function Index() {
 
 
   useEffect(() => {
-    console.log("refresh api");
-
     getIntroFromApi();
     getExperiencesFromApi();
     getAboutMeFromApi();
@@ -87,12 +87,16 @@ export default function Index() {
 
   return (
     <>
+      <Header ref={headerRef}></Header>
       <ReactPageScroller
         customPageNumber={pageNumber}
-        pageOnChange={(pageNumber) => {
-          setPageNumber(pageNumber);
+        pageOnChange={(nextPage) => {
+          console.log(`${nextPage}/${pageNumber}`);
           blockScrollOnPageExperiencesMobile();
+          setPageNumber(nextPage);
+          // headerRef.current?.hideOrShowHeader(pageNumber === 0);
         }}
+        renderAllPagesOnFirstRender={true}
         blockScrollDown={blockScroll}
         blockScrollUp={blockScroll}
         animationTimer={700}

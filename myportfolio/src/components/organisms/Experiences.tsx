@@ -22,8 +22,8 @@ export class Experiences extends Component<{ experiences: ExperienceModel[], blo
     }
 
     mountContent() {
-        if (window.innerWidth <= Breakpoints.phone) {
-            return <FlexRow>
+        if (window.innerWidth <= Breakpoints.tablet) {
+            return <FlexRow justify="stretch" grow={1}>
                 <XpCardsContainer onclick={(cardName: string) => {
                     this.clickCardEvent(cardName)
                 }} cards={this.props.experiences.map((card) => { return { logo: card.avatar, name: card.menuIdentifier } })} />
@@ -44,7 +44,7 @@ export class Experiences extends Component<{ experiences: ExperienceModel[], blo
 
         return (
             <PageSection pageId="experiences">
-                <FlexRow fullScreen={true}>
+                <FlexRow fullScreen={true} >
                     <div>
                         <PageTitle text='Experiences'></PageTitle>
                     </div>

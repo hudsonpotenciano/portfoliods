@@ -14,7 +14,7 @@
     margin-bottom: map-get($spacing, "xl");
   }
   @include tablet() {
-    max-width: calc(100vw / 2);
+    max-width: calc(100vw / 1.2);
   }
   @include desktop() {
     max-width: calc(100vw / 4);

@@ -1,5 +1,5 @@
 import Constants from '@portfoliods/foundation/src/Constants';
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 import { DarkThemeButton } from './DarkThemeButton'
 import { LightThemeButton } from './LightThemeButton'
 
@@ -15,10 +15,12 @@ export class ThemeControl extends Component<{}, { selectedTheme?: string }> {
         this.setState({
             selectedTheme: selectedTheme
         })
+
+        this.changeTheme(selectedTheme);
     }
 
-    componentDidUpdate() {
-        document.documentElement.className = "theme-" + this.state.selectedTheme;
+    changeTheme(theme: string) {
+        document.documentElement.className = "theme-" + theme;
     }
 
     mountDarkButton() {
@@ -26,6 +28,7 @@ export class ThemeControl extends Component<{}, { selectedTheme?: string }> {
             return <div onClick={() => {
                 this.setState({ selectedTheme: "light" })
                 localStorage.setItem(Constants.ThemeKey, Constants.Themes.light);
+                this.changeTheme(Constants.Themes.light);
             }}><LightThemeButton></LightThemeButton></div>
         }
     }
@@ -34,6 +37,7 @@ export class ThemeControl extends Component<{}, { selectedTheme?: string }> {
             return <div onClick={() => {
                 this.setState({ selectedTheme: "dark" })
                 localStorage.setItem(Constants.ThemeKey, Constants.Themes.dark);
+                this.changeTheme(Constants.Themes.dark);
             }}><DarkThemeButton></DarkThemeButton></div>
         }
     }

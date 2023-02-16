@@ -4,6 +4,15 @@ import React, { Component } from 'react'
 
 export class XpContent extends Component<{ align?: keyof typeof Aligns, text: any, fontSize?: keyof typeof FontSizes, blockScrollFunc?: Function }> {
 
+    componentDidUpdate() {
+
+        document.querySelectorAll(".portfoliods-xpcontent a").forEach((anchor) => {
+            if (!anchor.hasAttribute("target")) {
+                anchor.setAttribute("target", "_blank");
+            }
+        })
+    }
+
     render() {
         return (
             <div

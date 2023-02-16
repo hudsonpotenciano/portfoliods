@@ -18,6 +18,14 @@
     align-items: flex-end;
   }
 
+  &-justify-center {
+    justify-content: center;
+  }
+
+  &-justify-space-between {
+    justify-content: space-between;
+  }
+
   &--fullscreen {
     height: 100vh;
   }

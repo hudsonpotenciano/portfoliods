@@ -1,11 +1,9 @@
 @import "../foundation/all";
 
 .portfoliods-xpcard {
-  height: 69px;
-  width: 69px;
   border-radius: 15px;
   @include theme-aware("background-color", "gray-light");
-  box-shadow: map-get($shadows, "1");
+  box-shadow: map-get($shadows, "base");
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -17,12 +15,28 @@
 
   &:hover {
     @include theme-aware("background-color", "light-soft");
-    transform: scale(1);
+    transform: scale(0.98);
   }
 
   img {
-    width: 60px;
     padding: map-get($spacing, "xxxs");
+  }
+
+  @include phone() {
+    width: 62px;
+    height: 62px;
+    img {
+      width: 50px;
+    }
+  }
+
+  @include tablet() {
+    height: 80px;
+    width: 80px;
+    img {
+      width: 70px;
+      height: 70px;
+    }
   }
 
   @include desktop() {

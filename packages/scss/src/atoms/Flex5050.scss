@@ -17,7 +17,7 @@
   }
   @include tablet() {
     > * {
-      max-height: calc(100vh / 2);
+      max-height: calc(100vh / 1.5);
     }
   }
   @include desktop() {

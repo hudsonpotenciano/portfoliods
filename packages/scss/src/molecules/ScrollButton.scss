@@ -3,6 +3,6 @@
 
 .portfoliods-scrollbutton {
   cursor: pointer;
-  background-color: transparent;
+  @include theme-aware("background-color", "background");
   margin: 0 map-get($spacing, "xxxs");
 }

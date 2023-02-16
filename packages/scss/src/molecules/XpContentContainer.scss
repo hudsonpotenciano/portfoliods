@@ -4,11 +4,17 @@
 
 .portfoliods-xpcontentcontainer {
   overflow: auto;
-  max-height: calc(100vh / 2);
+  max-height: calc(100vh / 1.5);
   @include phone() {
     margin: 0 map-get($spacing, "sm");
+    .portfoliods-xpcontent {
+      padding-bottom: map-get($spacing, "xxl");
+    }
   }
   @include tablet() {
     margin: 0;
+    .portfoliods-xpcontent {
+      padding: 0;
+    }
   }
 }

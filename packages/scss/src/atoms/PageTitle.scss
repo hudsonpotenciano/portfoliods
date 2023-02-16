@@ -2,6 +2,14 @@
 
 .portfoliods-pagetitle {
   font-weight: $fw-bold;
+
+  @include phone() {
+    margin-bottom: map-get($spacing, "xl");
+  }
+  @include desktop() {
+    margin-bottom: map-get($spacing, "sm");
+  }
+
   @include theme-aware("color", "light");
   border-bottom: solid 3px black;
   @include theme-aware("border-color", "brand-blue");

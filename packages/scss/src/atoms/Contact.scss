@@ -3,27 +3,37 @@
 .portfoliods-contact {
   display: inline-flex;
   flex-direction: column;
-  width: 70px;
+  align-items: center;
   cursor: pointer;
+  width: 70px;
   transform: scale(0.9);
   transition: transform 250ms ease-in-out;
-  margin: 0 map-get($spacing, "sm");
 
   &:hover {
     transform: scale(1);
   }
 
-  img {
-    width: 68px;
-  }
-
   &-name {
     text-align: center;
     @include theme-aware("color", "light");
-    font-weight: $fw-normal;
+    font-weight: $fw-semibold;
     @include font-size();
+  }
 
-    &:hover {
+  @include phone() {
+    margin: 0 map-get($spacing, "sm");
+    &-name {
+      margin: map-get($spacing, "xs") 0;
+    }
+    img {
+      width: 50px;
+    }
+  }
+  @include tablet() {
+    margin: 0 map-get($spacing, "md");
+    img {
+      width: 68px;
+      margin-bottom: map-get($spacing, "sm");
     }
   }
 }

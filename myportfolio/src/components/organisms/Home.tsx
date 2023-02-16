@@ -14,7 +14,7 @@ export class Home extends Component<{ user: IntroModel, nextPageFunc: Function }
                 <FlexRow
                     fullScreen={true}
                     children={<>
-                        <Header></Header>
+                        <div></div>
                         <div>
                             <UserIntro user={this.props.user}></UserIntro>
                         </div>
