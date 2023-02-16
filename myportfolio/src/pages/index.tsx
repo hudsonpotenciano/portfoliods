@@ -91,10 +91,9 @@ export default function Index() {
       <ReactPageScroller
         customPageNumber={pageNumber}
         pageOnChange={(nextPage) => {
-          console.log(`${nextPage}/${pageNumber}`);
+          headerRef.current?.hideOrShowHeader(pageNumber === 0);
           blockScrollOnPageExperiencesMobile();
           setPageNumber(nextPage);
-          // headerRef.current?.hideOrShowHeader(pageNumber === 0);
         }}
         renderAllPagesOnFirstRender={true}
         blockScrollDown={blockScroll}

@@ -10,10 +10,16 @@
   padding: map-get($spacing, "xxs");
 
   @include phone() {
-    max-width: 100%;
+    overflow: auto;
+    width: 100%;
+    max-height: 65px;
+    flex-direction: column;
     margin-bottom: map-get($spacing, "xl");
   }
   @include tablet() {
+    max-height: unset;
+    flex-direction: unset;
+    overflow: unset;
     max-width: calc(100vw / 1.2);
   }
   @include desktop() {
