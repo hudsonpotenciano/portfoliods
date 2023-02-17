@@ -6,6 +6,7 @@ import '@portfoliods/scss/src/atoms/Subtitle.scss';
 import '@portfoliods/scss/src/atoms/PageTitle.scss';
 import '@portfoliods/scss/src/atoms/Contact.scss';
 import '@portfoliods/scss/src/molecules/PageLinks.scss';
+import i18n from "@/i18n";
 
 interface aboutMeProps {
     visitMessage: string,
@@ -28,7 +29,7 @@ export class ContactMe extends Component<aboutMeProps> {
         if (this.props.thanksMessage) {
             return <>
                 <div>
-                    <PageTitle text="Contact me"></PageTitle>
+                    <PageTitle text={i18n.t("contactme")}></PageTitle>
                 </div>
                 <div>
                     <Margin bottom={true} space="xl"><Subtitle fontSize={6} text={this.props.thanksMessage}></Subtitle></Margin>

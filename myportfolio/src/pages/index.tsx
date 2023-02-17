@@ -5,21 +5,23 @@ import { Home } from '../components/organisms/Home';
 import { ContactMe } from '@/components/organisms/ContactMe';
 import { getIntro } from '../services/intro.service';
 import { getAllContent } from '../services/experience.service';
-import '@portfoliods/scss/src/global.scss';
-import { AboutMeModel, ContactMeModel, ExperienceModel, IntroModel, LinkModel } from '@portfoliods/foundation/src/types';
+import { AboutMeModel, ContactMeModel, ExperienceModel, IntroModel, LinkModel, UserModel } from '@portfoliods/foundation/src/types';
 import { useEffect, useRef, useState } from 'react';
 import { getAboutMe } from '@/services/aboutme.service';
 import { getContactMe } from '@/services/contactme.service';
-import { Breakpoints } from '@portfoliods/foundation/src';
+import { Breakpoints, Constants } from '@portfoliods/foundation/src';
 import { Background, Header } from '@portfoliods/react';
+import '@portfoliods/scss/src/global.scss';
+import i18n from '@/i18n';
 
 export default function Index() {
-  const [blockScroll, setBlockScroll] = useState(false);
-  const [pageNumber, setPageNumber] = useState(0);
-  const [intro, setIntro] = useState({} as IntroModel);
-  const [experiences, setExperiences] = useState({} as ExperienceModel[]);
-  const [aboutMe, setAboutMe] = useState({} as AboutMeModel);
-  const [contactMe, setContactMe] = useState({} as ContactMeModel);
+  const [blockScroll, setBlockScroll] = useState<boolean>();
+  const [pageNumber, setPageNumber] = useState<number>(0);
+  const [language, setLanguage] = useState<string>();
+  const [intro, setIntro] = useState<IntroModel>();
+  const [experiences, setExperiences] = useState<ExperienceModel[]>();
+  const [aboutMe, setAboutMe] = useState<AboutMeModel>();
+  const [contactMe, setContactMe] = useState<ContactMeModel>();
   const headerRef = useRef<any>();
 
   const getIntroFromApi = () => {
@@ -60,12 +62,11 @@ export default function Index() {
   }
 
 
-  useEffect(() => {
-    getIntroFromApi();
-    getExperiencesFromApi();
-    getAboutMeFromApi();
-    getContactMeFromApi();
-  }, [])
+  const initLanguageI18n = () => {
+    const languageStorage = localStorage.getItem(Constants.LanguageKey);
+    const lang = languageStorage ? languageStorage.split("-")[0] : "en"
+    i18n.changeLanguage(lang);
+  }
 
   const mountExperiences = () => {
     if (experiences && experiences.length > 0) {
@@ -85,10 +86,25 @@ export default function Index() {
     }
   }
 
+  useEffect(() => {
+    initLanguageI18n();
+    getIntroFromApi();
+    getExperiencesFromApi();
+    getAboutMeFromApi();
+    getContactMeFromApi();
+  }, [language])
+
+
   return (
+
     <>
       <Background></Background>
-      <Header ref={headerRef}></Header>
+      <Header
+        changeLanguageFunc={() => {
+          initLanguageI18n();
+          window.location.reload();
+        }}
+        ref={headerRef}></Header>
       <ReactPageScroller
         customPageNumber={pageNumber}
         pageOnChange={(nextPage) => {
@@ -102,21 +118,21 @@ export default function Index() {
         animationTimer={700}
       >
         <Home
-          user={intro}
+          user={intro ?? {} as IntroModel}
           nextPageFunc={goToNextPage}
         ></Home>
         <AboutMe
-          text={aboutMe.text}
-          imageUrl={aboutMe.imageUrl}
+          text={aboutMe?.text}
+          imageUrl={aboutMe?.imageUrl ?? ""}
           nextPageFunc={goToNextPage}
           prevPageFunc={goToPrevPage}
         ></AboutMe>
         {mountExperiences()}
         <ContactMe
-          contacts={contactMe.contacts}
+          contacts={contactMe?.contacts ?? []}
           prevPageFunc={goToPrevPage}
-          thanksMessage={contactMe.message1}
-          visitMessage={contactMe.message2}
+          thanksMessage={contactMe?.message1 ?? ""}
+          visitMessage={contactMe?.message2 ?? ""}
         ></ContactMe>
       </ReactPageScroller>
     </>

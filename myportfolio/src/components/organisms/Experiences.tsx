@@ -8,6 +8,7 @@ import '@portfoliods/scss/src/molecules/XpCardsContainer.scss';
 import '@portfoliods/scss/src/molecules/XpContentContainer.scss';
 import '@portfoliods/scss/src/atoms/Line.scss';
 import { Breakpoints } from "@portfoliods/foundation/src";
+import i18n from "@/i18n";
 
 export class Experiences extends Component<{ experiences: ExperienceModel[], blockScrollFunc: Function, nextPageFunc: Function, prevPageFunc: Function }, { selectedCard: ExperienceModel }> {
 
@@ -46,7 +47,7 @@ export class Experiences extends Component<{ experiences: ExperienceModel[], blo
             <PageSection pageId="experiences">
                 <FlexRow fullScreen={true} >
                     <div>
-                        <PageTitle text='Experiences'></PageTitle>
+                        <PageTitle text={i18n.t("experiences")}></PageTitle>
                     </div>
 
                     {this.mountContent()}

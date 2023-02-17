@@ -1,13 +1,14 @@
 
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { Component, useEffect } from "react";
-import { Flex5050, FlexRow, Image5050, Margin, PageLinks, PageSection, PageTitle, Subtitle, XpContent } from "@portfoliods/react"
+import { Component } from "react";
+import { Flex5050, FlexRow, Image5050, PageLinks, PageSection, PageTitle, XpContent } from "@portfoliods/react"
 
 import '@portfoliods/scss/src/atoms/Subtitle.scss';
 import '@portfoliods/scss/src/atoms/Image5050.scss';
 import '@portfoliods/scss/src/atoms/PageTitle.scss';
 import '@portfoliods/scss/src/molecules/PageLinks.scss';
 import { Breakpoints } from "@portfoliods/foundation/src";
+import i18n from '../../i18n';
 
 interface aboutMeProps {
     text: any,
@@ -20,6 +21,7 @@ export class AboutMe extends Component<aboutMeProps> {
 
 
     mountFlex() {
+
         if (window.innerWidth <= Breakpoints.tablet) {
             return <FlexRow justify="center">
                 <XpContent fontSize={5} text={documentToHtmlString(this.props.text)}></XpContent>
@@ -38,7 +40,7 @@ export class AboutMe extends Component<aboutMeProps> {
         if (this.props.text) {
             return <>
                 <div>
-                    <PageTitle text='About me'></PageTitle>
+                    <PageTitle text={i18n.t("aboutme")}></PageTitle>
                 </div>
                 {this.mountFlex()}
                 <div>

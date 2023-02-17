@@ -3,7 +3,7 @@ import React, { useImperativeHandle } from 'react'
 import { Languages } from '../../atoms/Languages/Languages'
 import { ThemeControl } from '../../atoms/ThemeControl/ThemeControl'
 
-export const Header = React.forwardRef((props, ref: any) => {
+export const Header = React.forwardRef((props: { changeLanguageFunc: Function }, ref: any) => {
 
     useImperativeHandle(ref, () => ({
         hideOrShowHeader(show: boolean) {
@@ -14,12 +14,12 @@ export const Header = React.forwardRef((props, ref: any) => {
             } else if (header) {
                 header.classList.add("hide")
             }
-        }
+        },
     }))
 
     return (
         <header ref={ref} className='portfoliods-header' id='portfoliods-header'>
-            <Languages></Languages>
+            <Languages changeLanguageFunc={props.changeLanguageFunc}></Languages>
             <ThemeControl></ThemeControl>
         </header>
     )
