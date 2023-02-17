@@ -6,6 +6,7 @@ const withPWA = require("next-pwa")({
   register: true,
   skipWaiting: true,
   disableDevLogs: true,
+  disable: true
 });
 
 module.exports = withPWA(nextConfig({

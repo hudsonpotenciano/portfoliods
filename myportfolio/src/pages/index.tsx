@@ -11,7 +11,7 @@ import { useEffect, useRef, useState } from 'react';
 import { getAboutMe } from '@/services/aboutme.service';
 import { getContactMe } from '@/services/contactme.service';
 import { Breakpoints } from '@portfoliods/foundation/src';
-import { Header } from '@portfoliods/react';
+import { Background, Header } from '@portfoliods/react';
 
 export default function Index() {
   const [blockScroll, setBlockScroll] = useState(false);
@@ -87,6 +87,7 @@ export default function Index() {
 
   return (
     <>
+      <Background></Background>
       <Header ref={headerRef}></Header>
       <ReactPageScroller
         customPageNumber={pageNumber}

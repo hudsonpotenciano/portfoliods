@@ -17,4 +17,18 @@
       padding: 0;
     }
   }
+
+  &::-webkit-scrollbar {
+    width: 0.5em;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px;
+    @include theme-aware("box-shadow-color", "light-soft");
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(122, 122, 122, 0.247);
+    border-radius: 15px;
+  }
 }

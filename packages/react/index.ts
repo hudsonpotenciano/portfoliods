@@ -21,5 +21,6 @@ import { UserIntro } from "./src/molecules/UserIntro/UserIntro";
 import { XpContentContainer } from "./src/molecules/XpContentContainer/XpContentContainer";
 import { PageSection } from "./src/atoms/PageSection/PageSection";
 import { Header } from "./src/molecules/Header/Header";
+import { Background } from "./src/atoms/Background/Backgroud";
 
-export { Header, PageSection, PageLinks, UserIntro, XpContentContainer, XpLevel, XpCard, Image5050, Flex5050, FlexColumns, Arrow, Avatar, Contact, FlexRow, Line, Link, Margin, PageTitle, Subtitle, Title, XpCardsContainer, XpContent, ScrollButton };
+export { Background, Header, PageSection, PageLinks, UserIntro, XpContentContainer, XpLevel, XpCard, Image5050, Flex5050, FlexColumns, Arrow, Avatar, Contact, FlexRow, Line, Link, Margin, PageTitle, Subtitle, Title, XpCardsContainer, XpContent, ScrollButton };
