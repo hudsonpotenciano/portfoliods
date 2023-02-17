@@ -1,6 +1,15 @@
 # portfoliods
 My new portfolio with Design System
 
+## Stack
+* Reactjs
+* Nextjs
+* Storybook
+* Design System
+* Monorepo
+* Figma
+* Contentful
+
 ## Live version
 http://hudsonpotenciano-portfolio.netlify.app/
 
