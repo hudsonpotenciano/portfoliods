@@ -1,8 +1,8 @@
 import ReactPageScroller from 'react-page-scroller';
-import { AboutMe } from '@/components/organisms/AboutMe';
-import { Experiences } from '@/components/organisms/Experiences';
-import { Home } from '../components/organisms/Home';
-import { ContactMe } from '@/components/organisms/ContactMe';
+import { AboutMe } from '@/components/templates/AboutMe';
+import { Experiences } from '@/components/templates/Experiences';
+import { Home } from '../components/templates/Home';
+import { ContactMe } from '@/components/templates/ContactMe';
 import { getIntro } from '../services/intro.service';
 import { getAllContent } from '../services/experience.service';
 import { AboutMeModel, ContactMeModel, ExperienceModel, IntroModel, LinkModel, UserModel } from '@portfoliods/foundation/src/types';

@@ -9,14 +9,17 @@ export class Languages extends Component<{ changeLanguageFunc: Function }> {
     render() {
         return (
             <div className='portfoliods-languages'>
-                <button onClick={() => {
-                    const storageLang = localStorage.getItem(Constants.LanguageKey);
-                    if (storageLang != Constants.Languages.pt) {
-                        localStorage.setItem(Constants.LanguageKey, Constants.Languages.pt);
-                        this.props.changeLanguageFunc();
-                    }
-                }}><BrazilFlagIcon></BrazilFlagIcon></button>
                 <button
+                    data-testid="pt-lang-button"
+                    onClick={() => {
+                        const storageLang = localStorage.getItem(Constants.LanguageKey);
+                        if (storageLang != Constants.Languages.pt) {
+                            localStorage.setItem(Constants.LanguageKey, Constants.Languages.pt);
+                            this.props.changeLanguageFunc();
+                        }
+                    }}><BrazilFlagIcon></BrazilFlagIcon></button>
+                <button
+                    data-testid="en-lang-button"
                     onClick={() => {
                         const storageLang = localStorage.getItem(Constants.LanguageKey);
                         if (storageLang != Constants.Languages.en) {

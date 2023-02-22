@@ -9,7 +9,7 @@ const directions = {
 export class ScrollButton extends Component<{ direction?: keyof typeof directions, onclick?: Function }> {
     render() {
         return (
-            <button className='portfoliods-scrollbutton' onClick={(e) => {
+            <button data-testid="scrollbutton-test" className='portfoliods-scrollbutton' onClick={(e) => {
                 e.preventDefault();
                 if (this.props.onclick) {
                     this.props.onclick();

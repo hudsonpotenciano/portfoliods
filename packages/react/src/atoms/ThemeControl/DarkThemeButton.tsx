@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export class DarkThemeButton extends Component {
     render() {
         return (
-            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+            <svg data-testid='darkthemebutton-test' width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                 <rect width="31" height="31" fill="url(#DarkThemeButton)" />
                 <defs>
                     <pattern id="DarkThemeButton" patternContentUnits="objectBoundingBox" width="1" height="1">

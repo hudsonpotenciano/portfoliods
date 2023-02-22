@@ -9,9 +9,12 @@
   "scripts": {
     "build": "yarn lerna run build",
     "build:storybook": "yarn && yarn build && yarn lerna run build-storybook",
-    "build:myportfolio": "yarn && yarn build && yarn lerna run build-myportfolio"
+    "build:myportfolio": "yarn && yarn build && yarn lerna run build-myportfolio",
+    "test": "yarn lerna run test",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "husky": "^8.0.0",
     "lerna": "^6.4.1"
   },
   "workspaces": {
