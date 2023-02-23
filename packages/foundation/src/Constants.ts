@@ -1,4 +1,4 @@
-const LanguageKey = "languages";
+const LanguageKey = "language-i18n";
 const ThemeKey = "portfolio-theme";
 const Languages = {
     pt: "pt-BR",
