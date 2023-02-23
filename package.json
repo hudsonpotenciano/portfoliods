@@ -11,7 +11,7 @@
     "build:storybook": "yarn && yarn build && yarn lerna run build-storybook",
     "build:myportfolio": "yarn && yarn build && yarn lerna run build-myportfolio",
     "test": "yarn lerna run test-react",
-    "prepare": "husky install"
+    "prepare": "husky install && npx husky-init npm install"
   },
   "devDependencies": {
     "husky": "^8.0.0",
