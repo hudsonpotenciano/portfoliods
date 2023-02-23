@@ -10,7 +10,7 @@
     "build": "yarn lerna run build",
     "build:storybook": "yarn && yarn build && yarn lerna run build-storybook",
     "build:myportfolio": "yarn && yarn build && yarn lerna run build-myportfolio",
-    "test": "yarn lerna run test",
+    "test": "yarn lerna run test-react",
     "prepare": "husky install"
   },
   "devDependencies": {
