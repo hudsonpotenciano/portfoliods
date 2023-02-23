@@ -1,6 +1,6 @@
 import { Constants } from "@portfoliods/foundation/src";
 import { ContactMeModel, ContactModel, EntrieModel } from "@portfoliods/foundation/src/types";
-import { ContactMeAPI } from "@portfoliods/foundation/src/types/contactme.interface";
+import { ContactMeAPI } from "@portfoliods/foundation/src/types/Contactme.interface";
 import client from "./base.service";
 
 async function getContactMe(): Promise<ContactMeModel> {

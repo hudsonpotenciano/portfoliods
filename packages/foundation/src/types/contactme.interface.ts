@@ -1,5 +1,5 @@
-import { ContactModel } from './contact.interface'
-import { EntrieModel } from './entrie.interface';
+import { ContactModel } from './Contact.interface'
+import { EntrieModel } from './Entrie.interface';
 
 export interface ContactMeAPI {
     message1: string;
